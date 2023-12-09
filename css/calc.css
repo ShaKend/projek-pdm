@@ -1,6 +1,9 @@
-.explanation{
-    width: 400px;
+.explanation {
+  width: 400px;
 }
-.inputs{
-    height: 35px;
+.inputs {
+  height: 35px;
+}
+.bgblack {
+  background-color: #111111a0;
 }

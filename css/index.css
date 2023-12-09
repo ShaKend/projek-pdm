@@ -1,18 +1,18 @@
-.navbar{
-    height: 70px;
+.navbar {
+  height: 70px;
 }
 .hero {
-    min-height: 100vh;
-    background-image: url("../assets/young-fitness-man-studio.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    color: #010101;
-  }
-  .content{
-    height: 200px;
-  }
-  .footer{
-    height: 60px;
-    padding-top: 18px;
-  }
+  min-height: 100vh;
+  background-image: url("../assets/young-fitness-man-studio.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #010101;
+}
+.content {
+  height: 200px;
+}
+.footer {
+  height: 60px;
+  padding-top: 18px;
+}
