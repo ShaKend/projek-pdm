@@ -1,16 +1,10 @@
 <?php 
+session_start();
+
 //NAVBAR
 include('./static/navbar.php'); 
 
-if(isset($_POST['hitung'])){
-  //mengambil value tiap input
-  // $berat = $_POST['berat'];
-  // $tinggi = round($_POST['tinggi'] / 100, 2);
-  // $usia = $_POST['usia'];
 
-  //hitung bmi
-  //echo "<script>alert($tinggi)</script>";
-}
 ?>
 
     <div class="container text-center mt-5">
@@ -116,11 +110,17 @@ if(isset($_POST['hitung'])){
         <div class="col-6 text-start py-3">
           <h4 id="changed">Fungsi Kalkulator</h4>
           <hr />
-          <p>
-            BMI atau Body Mass Index adalah metode sederhana untuk menilai apakah berat badan Anda sesuai dengan tinggi badan. Silakan masukkan berat badan Anda dalam kilogram dan tinggi badan Anda dalam centimeter pada formulir. Setelah
-            itu, klik "Hitung" untuk mendapatkan nilai BMI Anda. Hasilnya akan memberi Anda gambaran umum tentang kategori berat badan Anda, apakah itu berat badan kurang, normal, kelebihan berat badan, atau obesitas.
-          </p>
-          <p>Jika Anda memiliki pertanyaan atau kekhawatiran lebih lanjut tentang kesehatan Anda, kami sarankan untuk berkonsultasi dengan profesional kesehatan.</p>
+
+          <div class="row justify-content-start">
+            <p id="indexBMI">
+              BMI atau Body Mass Index adalah metode sederhana untuk menilai apakah berat badan Anda sesuai dengan tinggi badan. Silakan masukkan berat badan Anda dalam kilogram dan tinggi badan Anda dalam centimeter pada formulir. Setelah
+              itu, klik "Hitung" untuk mendapatkan nilai BMI Anda. Hasilnya akan memberi Anda gambaran umum tentang kategori berat badan Anda, apakah itu berat badan kurang, normal, kelebihan berat badan, atau obesitas.
+            </p>
+          </div>
+
+          <div class="row justify-content-start">
+            <p>Jika Anda memiliki pertanyaan atau kekhawatiran lebih lanjut tentang kesehatan Anda, kami sarankan untuk berkonsultasi dengan profesional kesehatan.</p>
+          </div>
         </div>
 
         <!-- end dari row -->

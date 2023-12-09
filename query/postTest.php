@@ -1,7 +1,9 @@
 <?php
-echo $_POST['berat'];
-echo $_POST['tinggi'];
-echo $_POST['hasil'];
+session_start();
 
+if(isset($_POST['hasil'])){
+    $hasil = $_POST['hasil'];
+    echo $hasil;
+}
 
 ?>
