@@ -5,7 +5,7 @@ $(document).ready(function () {
     let berat = $("#berat").val();
     let tinggi = $("#tinggi").val() / 100;
     let usia = $("#usia").val();
-    let tinggiSqr = Math.pow(tinggi, 2).toFixed(2);
+    let tinggiSqr = Math.pow(tinggi, 2);
     let hasil = (berat / tinggiSqr).toFixed(2);
     //console.log(hasil);
 
@@ -21,7 +21,14 @@ $(document).ready(function () {
         $("#berat").val("");
         $("#tinggi").val("");
         $("#usia").val("");
-        $("#indexBMI").html(`<h3>${data}<h3>`);
+        if(data < 18.50){
+          $("#indexBMI").html(`<h3>${data} <span class=text-warning>underweight</span></h3>`);
+        }else if(18.50 <= data && data <= 25.00){
+          $("#indexBMI").html(`<h3>${data} <span class=text-success>normal</span></h3>`);
+        }else{
+          $("#indexBMI").html(`<h3>${data} <span class=text-danger>obese</span></h3>`);
+        }
+        console.log("data kamu segitu!");
       },
     });
   });

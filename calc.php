@@ -112,7 +112,8 @@ include('./static/navbar.php');
           <hr />
 
           <div class="row justify-content-start">
-            <p id="indexBMI">
+            <div id="indexBMI"></div>
+            <p id="details">
               BMI atau Body Mass Index adalah metode sederhana untuk menilai apakah berat badan Anda sesuai dengan tinggi badan. Silakan masukkan berat badan Anda dalam kilogram dan tinggi badan Anda dalam centimeter pada formulir. Setelah
               itu, klik "Hitung" untuk mendapatkan nilai BMI Anda. Hasilnya akan memberi Anda gambaran umum tentang kategori berat badan Anda, apakah itu berat badan kurang, normal, kelebihan berat badan, atau obesitas.
             </p>
