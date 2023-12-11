@@ -19,9 +19,9 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav nav-top">
-              <a class="nav-link active text-light" aria-current="page" href="./index.php">Home</a>
-              <a class="nav-link text-light" href="#">Features</a>
-              <a class="nav-link text-light" href="#">Pricing</a>
+              <a class="nav-link text-light" href="./calc.php">Kalkulator</a>
+              <a class="nav-link text-light" href="./login.php">Login</a>
+              <a class="nav-link text-light" href="./konsult.php">Konsultasi</a>
             </div>
           </div>
         </div>

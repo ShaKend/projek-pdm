@@ -29,7 +29,7 @@ include('./static/navbar.php');
               <div class="col-6">
                 <div class="input-group mb-3">
                   <span class="input-group-text inputs"><i class="bi bi-pencil-fill"></i></span>
-                  <input type="text" class="form-control inputs numbers" placeholder="kg" aria-label="Username" aria-describedby="basic-addon1" id="berat" name="berat" />
+                  <input type="text" class="form-control inputs numbers" placeholder="kg" aria-label="Username" aria-describedby="basic-addon1" id="berat" name="berat" required/>
                 </div>
               </div>
               <!-- end row seblah kiri bagian paling atas  -->
@@ -44,7 +44,7 @@ include('./static/navbar.php');
               <div class="col-6">
                 <div class="input-group mb-3">
                   <span class="input-group-text inputs"><i class="bi bi-pencil-fill"></i></span>
-                  <input type="text" class="form-control inputs numbers" placeholder="cm" aria-label="Username" aria-describedby="basic-addon1" id="tinggi" name="tinggi" />
+                  <input type="text" class="form-control inputs numbers" placeholder="cm" aria-label="Username" aria-describedby="basic-addon1" id="tinggi" name="tinggi" required/>
                 </div>
               </div>
   
@@ -60,7 +60,7 @@ include('./static/navbar.php');
               <div class="col-6">
                 <div class="input-group mb-3">
                   <span class="input-group-text inputs" id="basic-addon1"><i class="bi bi-pencil-fill"></i></span>
-                  <input type="text" class="form-control inputs numbers" placeholder="tahun" aria-label="Username" aria-describedby="basic-addon1" id="usia" name="usia" />
+                  <input type="text" class="form-control inputs numbers" placeholder="tahun" aria-label="Username" aria-describedby="basic-addon1" id="usia" name="usia" required/>
                 </div>
               </div>
   
@@ -75,11 +75,11 @@ include('./static/navbar.php');
   
               <div class="col-6 ps-0">
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked />
                   <label class="form-check-label" for="flexRadioDefault1"> Pria </label>
                 </div>
                 <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked />
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
                   <label class="form-check-label" for="flexRadioDefault2"> Wanita </label>
                 </div>
               </div>
@@ -96,7 +96,7 @@ include('./static/navbar.php');
   
               <div class="col-6 text-start">
                 <button class="btn btn-light me-4 fw-medium">Reset</button>
-                <button class="btn btn-light fw-medium" id="hitung" name="hitung">Hitung</button>
+                <button type="submit" class="btn btn-light fw-medium" id="hitung" name="hitung">Hitung</button>
               </div>
   
               <!-- end row kiri bawah  -->

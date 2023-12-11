@@ -1,13 +1,31 @@
 $(document).ready(function () {
+  //terima input
+  let berat = $("#berat");
+  let tinggi = $("#tinggi");
+  let usia = $("#usia");
+
+  $("#hitung").prop("disabled", true);
+
+  function validate() {
+    if (berat.val() == "" || tinggi.val() == "") {
+      $("#hitung").prop("disabled", true);
+    } else {
+      $("#hitung").prop("disabled", false);
+    }
+  }
+
+  berat.on("input", validate);
+  tinggi.on("input", validate);
+
   //ketika tombol hitung dipencet
   $("#hitung").click(function () {
     event.preventDefault();
-    let berat = $("#berat").val();
-    let tinggi = $("#tinggi").val() / 100;
-    let usia = $("#usia").val();
-    let tinggiSqr = Math.pow(tinggi, 2);
-    let hasil = (berat / tinggiSqr).toFixed(2);
-    //console.log(hasil);
+    let beratVal = berat.val();
+    let tinggiVal = tinggi.val();
+    let usiaVal = usia.val();
+    let tinggiMtr = tinggiVal / 100;
+    let tinggiSqr = Math.pow(tinggiMtr, 2);
+    let hasil = (beratVal / tinggiSqr).toFixed(2);
 
     //ajax
     $.ajax({
@@ -18,15 +36,15 @@ $(document).ready(function () {
       },
       success: function (data) {
         console.log(data);
-        $("#berat").val("");
-        $("#tinggi").val("");
-        $("#usia").val("");
-        if(data < 18.50){
+        if (data < 18.5) {
           $("#indexBMI").html(`<h3>${data} <span class=text-warning>underweight</span></h3>`);
-        }else if(18.50 <= data && data <= 25.00){
+          $("#details").html("<p>Anda berada dalam kategori kekurangan berat badan. Hubungi dokter lebih lanjut mengenai pola makan dan gizi yang baik untuk meningkatkan kesehatan.</p>");
+        } else if (18.5 <= data && data <= 25.0) {
           $("#indexBMI").html(`<h3>${data} <span class=text-success>normal</span></h3>`);
-        }else{
+          $("#details").html("<p> Anda berada dalam kategori berat badan yang normal. Tetap pertahankan berat badan Anda dan jaga berat badan Anda dengan mengatur keseimbangan antara pola makan dan aktivitas fisik Anda. </p>");
+        } else {
           $("#indexBMI").html(`<h3>${data} <span class=text-danger>obese</span></h3>`);
+          $("#details").html("<p>Anda berada dalam kategori obesitas. Segera kunjungi dokter untuk dilakukan pemeriksaan kesehatan lanjutan untuk mengetahui risiko yang Anda miliki terkait berat badan Anda.</p>");
         }
         console.log("data kamu segitu!");
       },
