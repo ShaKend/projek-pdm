@@ -1,3 +1,9 @@
+<?php 
+if(!isset($_SESSION)){
+  session_start();
+}
+
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -20,7 +26,11 @@
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav nav-top">
               <a class="nav-link text-light" href="./calc.php">Kalkulator</a>
+              <?php if(!isset($_SESSION['userLogin'])){ ?>
               <a class="nav-link text-light" href="./login.php">Login</a>
+              <?php } else{ ?>
+              <a class="nav-link text-light" href="./logout.php">Logout</a>
+              <?php } ?>
               <a class="nav-link text-light" href="./konsult.php">Konsultasi</a>
             </div>
           </div>

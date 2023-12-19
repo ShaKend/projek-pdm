@@ -1,7 +1,8 @@
 <?php
 include('./dbConnection.php');
+session_start();
 
-//login
+//register
 if(isset($_POST['usernameReg']) && isset($_POST['useremailReg']) && isset($_POST['userpassReg'])){
     $nameReg = $_POST['usernameReg'];
     $emailReg = $_POST['useremailReg'];
@@ -11,8 +12,11 @@ if(isset($_POST['usernameReg']) && isset($_POST['useremailReg']) && isset($_POST
 
     if ($conn->query($sql) == true) {
         echo 1;
+        $_SESSION['userLogin'] = true;
+        $_SESSION['username'] = $nameReg;
     }else{
         echo 0;
+        $_SESSION['userLogin'] = false;
     }
 }
 
@@ -25,6 +29,34 @@ if(isset($_POST['useremailRegValid'])){
     $row = $result->num_rows;
     echo $row;
 }
+
+//login
+if(isset($_POST['emailLog']) && isset($_POST['passLog'])){
+    $userEmail = $_POST['emailLog'];
+    $userPass = $_POST['passLog'];
+
+    $sql = "SELECT username FROM user WHERE useremail = ? AND userpass = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param('ss', $userEmail, $userPass);
+    $stmt->execute();
+    $stmt->bind_result($userName);
+    $stmt->fetch();
+    $stmt->close();
+    if($userName){
+        // $row = $result->fetch_assoc();  
+        $_SESSION['userLogin'] = true;
+        $_SESSION['userName'] = $userName;
+        echo 1;
+    }else{
+        $_SESSION['userLogin'] = false;
+        echo 0;
+    }
+}
+
+
+
+
+
 
 
 ?>

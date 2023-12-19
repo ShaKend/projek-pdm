@@ -68,4 +68,31 @@ $(document).ready(function () {
       },
     });
   });
+
+  //login
+  $("#loginBtn").click(function () {
+    event.preventDefault();
+    let emailLog = $("#logEmail").val();
+    let passLog = $("#logPass").val();
+
+    $.ajax({
+      url: "query/userQuery.php",
+      type: "post",
+      data: {
+        emailLog: emailLog,
+        passLog: passLog,
+      },
+      success: function (data) {
+        console.log(data);
+        if (data == 1) {
+          $("#errorMsg").html("<span class='spinner-border text-success'></span>");
+          setTimeout(() => {
+            window.location.href = "./konsult.php";
+          }, 900);
+        } else if (data == 0) {
+          $("#errorMsg").html("<span class='text-danger'> Error query</span>");
+        }
+      },
+    });
+  });
 });

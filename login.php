@@ -1,5 +1,4 @@
 <?php 
-session_start();
 
 //NAVBAR
 include('./static/navbar.php'); 
@@ -18,7 +17,7 @@ include('./static/navbar.php');
             <label for="logPass" class="form-label">Password</label>
             <input type="password" class="form-control" id="logPass">
         </div>
-        <button type="submit" class="btn btn-light" id="loginBtn">Login</button>
+        <button type="submit" class="btn btn-light" id="loginBtn">Login</button><span id="errorMsg"></span>
         <div class="mt-3">don't have an account? <a href="./regis.php" id="regisLink">Register</a></div>
         </form>
     </div>

@@ -1,9 +1,13 @@
 <?php 
-session_start();
 
 //NAVBAR
 include('./static/navbar.php'); 
 
+if(isset($_POST['hitung'])){
+  if(isset($_POST['radio'])){
+    echo "<script>alert('{$_POST['radio']}')</script>";
+  }
+}
 
 ?>
 
@@ -11,7 +15,7 @@ include('./static/navbar.php');
       <!-- <div class="explanation text-start">
         BMI is a measurement of a person's leanness or corpulence based on their height and weight, and is intended to quantify tissue mass. It is widely used as a general indicator of whether a person has a healthy body weight for their height. Specifically, the value obtained from the calculation of BMI is used to categorize whether a person is underweight, normal weight, overweight, or obese depending on what range the value falls between. These ranges of BMI vary based on factors such as region and age, and are sometimes further divided into subcategories such as severely underweight or very severely obese. Being overweight or underweight can have significant health effects, so while BMI is an imperfect measure of healthy body weight, it is a useful indicator of whether any additional testing or action is required. Refer to the table below to see the different categories based on BMI that are used by the calculator.
       </div> -->
-      <div class="row justify-content-start px-4">
+      <div class="row justify-content-around px-4">
         <!-- bagian kiri  -->
         <div class="col-5 bgblack rounded-4 py-4">
           <div class="row justify-content-start px-3">
@@ -72,18 +76,17 @@ include('./static/navbar.php');
               <div class="col-5 text-end">
                 <h5>Jenis Kelamin:</h5>
               </div>
-  
-              <div class="col-6 ps-0">
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked />
-                  <label class="form-check-label" for="flexRadioDefault1"> Pria </label>
+
+                <div class="col-6 ps-0">
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault1" value="pria"/>
+                    <label class="form-check-label" for="flexRadioDefault1"> Pria </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="gender" id="flexRadioDefault2" value="wanita" />
+                    <label class="form-check-label" for="flexRadioDefault2"> Wanita </label>
+                  </div>
                 </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" />
-                  <label class="form-check-label" for="flexRadioDefault2"> Wanita </label>
-                </div>
-              </div>
-  
               <!-- end row kiri bawah  -->
             </div>
   
@@ -96,7 +99,7 @@ include('./static/navbar.php');
   
               <div class="col-6 text-start">
                 <button class="btn btn-light me-4 fw-medium">Reset</button>
-                <button type="submit" class="btn btn-light fw-medium" id="hitung" name="hitung">Hitung</button>
+                <input type="button" class="btn btn-light fw-medium" id="hitung" name="hitung" value="hitung"></input>
               </div>
   
               <!-- end row kiri bawah  -->
@@ -118,11 +121,20 @@ include('./static/navbar.php');
               itu, klik "Hitung" untuk mendapatkan nilai BMI Anda. Hasilnya akan memberi Anda gambaran umum tentang kategori berat badan Anda, apakah itu berat badan kurang, normal, kelebihan berat badan, atau obesitas.
             </p>
           </div>
-
-          <div class="row justify-content-start">
+          
+          <div>
             <p>Jika Anda memiliki pertanyaan atau kekhawatiran lebih lanjut tentang kesehatan Anda, kami sarankan untuk berkonsultasi dengan profesional kesehatan.</p>
           </div>
+
+          <div>
+            <span id="btn-konsult"></span>
+            <!-- <a href="./konsult.php">
+              <button class="btn btn-light">Konsultasi</button>
+            </a> -->
+          </div>
+
         </div>
+        
 
         <!-- end dari row -->
       </div>
